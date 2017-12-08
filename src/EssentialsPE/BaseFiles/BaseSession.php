@@ -93,7 +93,7 @@ class BaseSession{
         $this->config->save(true);
     }
 
-    public function onClose(): void{
+    public function onClose() {
         $this->saveSession();
 
         // Let's revert some things to their original state...
@@ -176,7 +176,7 @@ class BaseSession{
         return true;
     }
 
-    public function removeAFKKickTaskID(): void{
+    public function removeAFKKickTaskID() {
         $this->kickAFK = null;
     }
 
@@ -672,7 +672,7 @@ class BaseSession{
         $this->requestToAction = $action;
     }
 
-    public function cancelTPRequest(): void{
+    public function cancelTPRequest() {
         $this->requestTo = false;
         $this->requestToAction = false;
     }
