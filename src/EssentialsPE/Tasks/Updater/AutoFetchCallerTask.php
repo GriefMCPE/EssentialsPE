@@ -19,7 +19,7 @@ class AutoFetchCallerTask extends BaseTask{
     /**
      * @param int $currentTick
      */
-    public function onRun(int $currentTick): void{
+    public function onRun($currentTick) {
         $this->getAPI()->getServer()->getLogger()->debug(TextFormat::YELLOW . "Running EssentialsPE's AutoFetchCallerTask");
         $this->getAPI()->fetchEssentialsPEUpdate(false);
     }

@@ -62,7 +62,7 @@ class BaseKit{
      * @param int|null $meta
      * @return null|Item
      */
-    public function hasItem($id, $meta = null): ?Item{
+    public function hasItem($id, $meta = null): Item{
         if(!isset($this->items[$id]) || ($meta !== null && $this->items[$id]->getDamage() !== $meta)){
             return null;
         }
@@ -72,7 +72,7 @@ class BaseKit{
     /**
      * @param Inventory $inventory
      */
-    public function addToInventory(Inventory $inventory): void{
+    public function addToInventory(Inventory $inventory){
         foreach($this->getItems() as $i){
             $inventory->setItem($inventory->firstEmpty(), clone $i);
         }
@@ -82,7 +82,7 @@ class BaseKit{
     /**
      * @param Player $player
      */
-    public function giveToPlayer(Player $player): void{
+    public function giveToPlayer(Player $player) {
         $this->addToInventory($player->getInventory());
     }
 }

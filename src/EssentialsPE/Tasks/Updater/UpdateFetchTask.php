@@ -25,7 +25,7 @@ class UpdateFetchTask extends AsyncTask{
         $this->install = $install;
     }
 
-    public function onRun(): void{
+    public function onRun() {
         switch($this->build){
             case "stable":
             default:
@@ -64,7 +64,7 @@ class UpdateFetchTask extends AsyncTask{
     /**
      * @param Server $server
      */
-    public function onCompletion(Server $server): void{
+    public function onCompletion(Server $server) {
         /** @var Loader $ess */
         $ess = $server->getPluginManager()->getPlugin("EssentialsPE");
 

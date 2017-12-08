@@ -36,7 +36,7 @@ class CreateAPIEvent extends PluginEvent{
     /**
      * @param BaseAPI::class $api
      */
-    public function setClass(string $class): void{
+    public function setClass(string $class) {
         if(!is_a($class, BaseAPI::class, true)){
             throw new \RuntimeException("Class $class must extend " . BaseAPI::class);
         }

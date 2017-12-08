@@ -46,7 +46,7 @@ class MessagesAPI{
 	* @param $identifier
 	* @return bool|string
 	*/
-	public function getMessage($identifier): ?string{
+	public function getMessage($identifier) {
 		if(trim($identifier) === ""){
 		    return null;
 		}

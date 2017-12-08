@@ -32,7 +32,7 @@ class UpdateInstallTask extends AsyncTask{
         $this->api = $api;
     }
 
-    public function onRun(): void{
+    public function onRun() {
         if(file_exists($this->pluginPath . "EssentialsPE.phar")){
             unlink($this->pluginPath . "EssentialsPE.phar");
         }
@@ -57,7 +57,7 @@ class UpdateInstallTask extends AsyncTask{
     /**
      * @param Server $server
      */
-    public function onCompletion(Server $server): void{
+    public function onCompletion(Server $server) {
         $server->getLogger()->info(TextFormat::AQUA . "[EssentialsPE]" . TextFormat::YELLOW . " Successfully updated to version " . TextFormat::GREEN . $this->newVersion . TextFormat::YELLOW . ". To start using the new features, please fully restart your server.");
         $this->api->scheduleUpdaterTask();
     }
